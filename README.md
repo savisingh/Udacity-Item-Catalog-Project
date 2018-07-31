@@ -25,12 +25,12 @@ The python file to be executed in the virtual machine is called
 ## Notes for the User 
 
 - For any type of user you will be able to see:
--- The home page which will list the Sports along with the Latest Added Items
--- Details of a Sport Item (name and description)
+	- The home page which will list the Sports along with the Latest Added Items
+	- Details of a Sport Item (name and description)
 - If you are able to login in you can:
--- **add** a new Sport Item
--- **delete** a Sport Item
--- **edit** a Sport Item
+	- **add** a new Sport Item
+	- **delete** a Sport Item
+	- **edit** a Sport Item
 
 ## API Endpoints
 
