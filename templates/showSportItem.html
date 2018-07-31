@@ -1,0 +1,32 @@
+{% extends "main.html" %} {% block content %} {% include "header.html" %}
+<div class="row divider blue">
+  <div class="col-md-12"></div>
+</div>
+
+<div class="row padding-top padding-bottom">
+  {% for sport_item in items %}
+  <div class="row">
+    <h1>{{sport_item.name}}</h1>
+  </div>
+  <div class="row">
+    <p>{{sport_item.description}}</p>
+  </div>
+  {% endfor %}
+
+  <div class="col-md-11 padding-none">
+    <a href="{{url_for('editSportItem', sport_item = sport_item)}}">
+				<button class="btn btn-default edit" id="edit-sport-item">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Edit
+				</button>
+			</a>
+    <a href="{{url_for('deleteSportItem', sport_item = sport_item, sport_name = sport_name )}}">
+				<button class="btn btn-default delete" id="delete-sport-item">
+					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete
+				</button>
+			</a>
+  </div>
+  <div class="col-md-7"></div>
+</div>
+
+
+{% endblock %}

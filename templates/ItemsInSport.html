@@ -1,0 +1,53 @@
+{% extends "main.html" %} {% block content %} {% include "header.html" %}
+<div class="row top-menu">
+  <div class="col-md-10"></div>
+  <div class="col-md-2 text-right">
+  </div>
+</div>
+<div class="row divider blue">
+  <div class="col-md-12"></div>
+</div>
+<div class="row banner menu">
+  <div class="col-md-11 col-md-offset-1 padding-none">
+    <h1>Sports App</h1>
+  </div>
+</div>
+
+<div class='flash'>
+  {% with messages = get_flashed_messages() %} {% if messages %}
+
+  <ul>
+    {% for message in messages %}
+    <li> <strong> {{ message }} </strong> </li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
+
+</div>
+
+
+<div class="col-md-6">
+  <div class="row">
+    <h2>Sports</h2>
+  </div>
+  {% for sport in sports %}
+  <div class="row">
+    <h3>{{sport.name}}</h3>
+  </div>
+  {% endfor %}
+</div>
+
+
+<div class="col-md-6">
+  <div class="row">
+    <h2>{{sport_name}} Items</h2>
+  </div>
+  {% for item in items%} {% if item.sport.name == sport_name %}
+  <div class="row">
+    <h3><a href="{{url_for('showSportItem', sport_item=item.name, sport_name=item.sport.name)}}">{{item.name}}({{item.sport.name}})</a></h3>
+  </div>
+  {% endif %} {% endfor %}
+</div>
+
+
+{% endblock %}

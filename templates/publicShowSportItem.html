@@ -1,0 +1,21 @@
+{% extends "main.html" %} {% block content %} {% include "header.html" %}
+<div class="row divider blue">
+	<div class="col-md-12"></div>
+</div>
+
+<div class="row padding-top padding-bottom">
+	{% for sport_item in items %}
+	<div class="row">
+		<h1>{{sport_item.name}}</h1>
+	</div>
+	<div class="row">
+		<p>{{sport_item.description}}</p>
+	</div>
+	{% endfor %}
+
+
+	<div class="col-md-7"></div>
+</div>
+
+
+{% endblock %}
